@@ -17,8 +17,11 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-const JOKE =
-  "My agent said 'Done!' halfway through the demo. The feature wasn't done — the demo was.";
+// Misdirection: the listener hears "Done!" and assumes the feature is
+// finished — the twist reassigns the word "done" to the demo itself.
+const SETUP = "My agent said 'Done!' halfway through the demo.";
+const TWIST = "The feature wasn't done — the demo was.";
+const JOKE = `${SETUP} ${TWIST}`;
 
 const outDir = "/output";
 fs.mkdirSync(outDir, { recursive: true });
